@@ -8,6 +8,15 @@
         }
     },
     {
+        "name": "uShopia",
+        "desc": "a beautiful ecommercewebsite made with redux toolkit, bootstrap, and more.",
+        "image": "ushopia",
+        "links": {
+            "view": "https://u-shopia.vercel.app/",
+            "code": "https://github.com/M7MD-abo-jacob/react-weather-app-code"
+        }
+    },
+    {
         "name": "Minesweeper Game",
         "desc": "This was my first complete project made with vanilla javascript.",
         "image": "minesweeper",
