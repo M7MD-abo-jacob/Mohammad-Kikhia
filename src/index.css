@@ -541,9 +541,8 @@ header .navbar ul li a:hover {
 }
 
 .skills .container .row {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
     gap: 1.8rem;
 }
 
@@ -589,7 +588,6 @@ header .navbar ul li a:hover {
         margin: 0;
     }
     .skills .container .row {
-        grid-template-columns: repeat(2, 1fr);
         margin: 1rem;
         padding: 2rem 0.2rem 2rem 0.2rem;
         gap: 1rem;
