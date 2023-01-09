@@ -4,7 +4,7 @@
         "image": "ushopia",
         "links": {
             "view": "https://u-shopia.vercel.app/",
-            "code": "https://github.com/M7MD-abo-jacob/react-weather-app-code"
+            "code": "https://github.com/M7MD-abojacob/uShopia"
         }
     },
     {
@@ -12,8 +12,8 @@
         "desc": "A much better place to check out the weather than the one on your phone.",
         "image": "weatherapp",
         "links": {
-            "view": "https://m7md-abo-jacob.github.io/react-weather-app/",
-            "code": "https://github.com/M7MD-abo-jacob/react-weather-app-code"
+            "view": "https://my-dynamic-weather.vercel.app",
+            "code": "https://github.com/M7MD-abojacob/weather-app"
         }
     },
     {
@@ -30,8 +30,8 @@
         "desc": "THIS WEBSITE!",
         "image": "portfolio",
         "links": {
-            "view": "https://m7md-abo-jacob.github.io/Responsive-Portfolio/",
-            "code": "https://github.com/M7MD-abo-jacob/responsive-portfolio-code"
+            "view": "https://mohammad-kikhia.vercel.app",
+            "code": "https://github.com/M7MD-abojacob/Mohammad-Kikhia"
         }
     }
 ]
