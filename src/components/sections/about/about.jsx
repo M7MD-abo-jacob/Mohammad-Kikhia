@@ -65,7 +65,7 @@ const About = () => {
                 className="btn"
               >
                 <span>My Resume</span>
-                <i className="fa-solid fa-download"></i>
+                <i className="fas fa-download"></i>
               </a>
             </div>
           </AnimationOnScroll>
