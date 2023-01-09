@@ -1,6 +1,6 @@
 import React from "react";
 import me2 from "../../../assets/img/me2.jpg";
-import myResume from "../../../assets/utils/mohammad_kikhia.docx";
+import myResume from "../../../assets/utils/mohammad-kikhia.pdf";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 
