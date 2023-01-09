@@ -64,7 +64,7 @@ const About = () => {
                 rel="noreferrer"
                 className="btn"
               >
-                <span>Resume</span>
+                <span>My Resume</span>
                 <i className="fa-solid fa-download"></i>
               </a>
             </div>
