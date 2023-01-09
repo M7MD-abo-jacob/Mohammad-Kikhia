@@ -66,7 +66,7 @@ function Hero() {
                 <a
                   className="linkedin"
                   aria-label="LinkedIn"
-                  href="https://www.linkedin.com/in/mohammad-kikhia-a950595a/"
+                  href="https://www.linkedin.com/in/mohammad-kikhia"
                   target="_blank"
                   rel="noreferrer"
                 >
