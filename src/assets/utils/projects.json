@@ -1,13 +1,4 @@
 [{
-        "name": "Weather App",
-        "desc": "This website was made to try out React's functional components and hooks instead of the old class components.",
-        "image": "weatherapp",
-        "links": {
-            "view": "https://m7md-abo-jacob.github.io/react-weather-app/",
-            "code": "https://github.com/M7MD-abo-jacob/react-weather-app-code"
-        }
-    },
-    {
         "name": "uShopia",
         "desc": "a beautiful ecommercewebsite made with redux toolkit, bootstrap, and more.",
         "image": "ushopia",
@@ -17,8 +8,17 @@
         }
     },
     {
+        "name": "Dynamic Weather App",
+        "desc": "A much better place to check out the weather than the one on your phone.",
+        "image": "weatherapp",
+        "links": {
+            "view": "https://m7md-abo-jacob.github.io/react-weather-app/",
+            "code": "https://github.com/M7MD-abo-jacob/react-weather-app-code"
+        }
+    },
+    {
         "name": "Minesweeper Game",
-        "desc": "This was my first complete project made with vanilla javascript.",
+        "desc": "My take on the infamous minesweeper game with vanilla javascript.",
         "image": "minesweeper",
         "links": {
             "view": "https://m7md-abo-jacob.github.io/mineSweeper/",
