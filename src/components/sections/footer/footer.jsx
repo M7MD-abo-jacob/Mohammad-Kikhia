@@ -57,7 +57,7 @@ const Footer = () => {
           </p>
           <div className="share">
             <a
-              href="https://www.linkedin.com/in/mohammad-kikhia-a950595a/"
+              href="https://www.linkedin.com/in/mohammad-kikhia"
               aria-label="LinkedIn"
               target="_blank"
               rel="noreferrer"
