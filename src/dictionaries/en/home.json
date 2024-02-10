@@ -1,0 +1,86 @@
+{
+  "common": {
+    "metadata": {
+      "title": "Mohammad Kikhia | My Portfolio",
+      "description": "Mohammad Kikhia is a professional frontend web developer from Syria, specializing in ReactJS and NextJS. With a strong focus on user experience and interactive design, I create efficient and innovative web solutions. Explore my portfolio to see my work and learn more about my expertise in modern web technologies.",
+      "author": "Mohammad Kikhia"
+    },
+    "top": "to top",
+    "nav": {
+      "home": "home",
+      "about": "about me",
+      "skills": "skills",
+      "projects": "projects",
+      "contact": "contact me"
+    },
+    "contact_methods": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "telegram": "Telegram",
+      "instagram": "Instagram",
+      "email": "send an email"
+    }
+  },
+
+  "header": {
+    "brand": "Mohammad Kikhia",
+    "open_panel": "open side panel",
+    "close_panel": "close side panel"
+  },
+
+  "hero": {
+    "title": "Hi there, I'm Mohammad {span}Kikhia{span}",
+    "subtitle": "I am into:",
+    "subtext": [
+      "Implementing UI/UX designs into interactive websites",
+      "developing responsive UIs",
+      "building accessible websites"
+    ]
+  },
+
+  "about": {
+    "section_title": "about {span}me{span}",
+    "title": "I'm Mohammad",
+    "subtitle": "ReactJS-NextJS developer",
+    "subtext": "As a dedicated ReactJS-NextJS developer with three years of experience, I bring a passion for coding and a year of hands-on freelance experience to the table. My commitment to writing clean, well-documented, and accessible code using modern frameworks ensures that every project I work on is of the highest quality. I take pride in creating digital solutions that are not only functional but also beautifully crafted with love.",
+    "resume": "my resume"
+  },
+
+  "skills": {
+    "title": "skills & {span}abilities{span}"
+  },
+
+  "projects": {
+    "title": "personal {span}projects{span}",
+    "visit": "visit",
+    "code": "source code"
+  },
+
+  "contact": {
+    "title": "get {span}in touch{span}",
+    "name": "name",
+    "email": "email",
+    "subject": "subject",
+    "message": "message",
+    "submit": "submit",
+    "errors": {
+      "invalid_name": "Please enter a valid Name",
+      "invalid_subject": "Subject should be at least Two Words",
+      "invalid_message": "Message should be at least Two Words",
+      "invalid_email": "Please enter a valid Email Address",
+      "default": "Something Unexpected Happened, please try again!"
+    }
+  },
+
+  "footer": {
+    "title": "Mohammad's portfolio",
+    "subtext": "thank you for visiting my personal portfolio website. I'll be happy to connect with you over social media platforms listed at the end. 🚀",
+    "links": "quick links",
+    "contact_methods": "contact methods",
+    "phone": "phone",
+    "email": "email",
+    "location": "location",
+
+    "signature": "made with {i} {i} by {a}Mohammad Kikhia.{a}"
+  }
+}
