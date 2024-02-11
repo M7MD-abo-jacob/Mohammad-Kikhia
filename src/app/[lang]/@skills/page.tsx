@@ -28,8 +28,8 @@ const Skills = async ({ params }: { params: { lang: Locale } }) => {
                     <Image
                       src={skill.icon}
                       alt="skill"
-                      height={50}
-                      width={50}
+                      height={200}
+                      width={200}
                     />
                     <span>{skill.name}</span>
                   </div>

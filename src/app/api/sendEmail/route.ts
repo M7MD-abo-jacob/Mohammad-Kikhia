@@ -1,3 +1,4 @@
+import { validateInput } from '@/lib/validateInput';
 import { NextResponse } from 'next/server';
 
 const serviceID = process.env.serviceID;
@@ -7,6 +8,7 @@ const templateID = process.env.templateID;
 export async function POST(req: Request) {
   const body = await req.json();
   const { name, email, subject, message } = body;
+  const validationError = validateInput({ name, email, subject, message });
 
   const params = {
     user_id: publicKey,
@@ -29,6 +31,12 @@ export async function POST(req: Request) {
   };
 
   try {
+    if (validationError) {
+      return NextResponse.json(
+        { error: 'An error occurred while sending email' },
+        { status: 500 },
+      );
+    }
     const response = await fetch(
       'https://api.emailjs.com/api/v1.0/email/send',
       options,

@@ -36,8 +36,6 @@ export default async function HomePage({
                 sequence={dictionary.home.hero.subtext}
                 wrapper="span"
                 cursor={true}
-                repeat={Infinity}
-                // style={{ fontSize: '1em' }}
               />
             </p>
             <Link
@@ -100,8 +98,18 @@ export async function generateMetadata(req: any) {
   return {
     title: metaData.title,
     description: metaData.description,
-    category: 'technology',
-    generator: 'Next.js',
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: true,
+        notranslate: true,
+        'max-image-preview': 'large',
+      },
+    },
     applicationName: metaData.title,
     keywords: [
       'Mohammad Kikhia',
@@ -144,13 +152,14 @@ export async function generateMetadata(req: any) {
       { name: metaData.author },
       { name: metaData.author, url: 'https://mohammad-kikhia.vercel.app' },
     ],
+    category: 'technology',
     publisher: metaData.author,
     creator: metaData.author,
     twitter: {
       card: metaData.title,
       title: metaData.title,
       description: metaData.description,
-      images: ['/assets/img/me1.jpg'],
+      images: ['/assets/img/me1.jpg', '/assets/img/me2.jpg'],
     },
     openGraph: {
       title: metaData.title,

@@ -10,13 +10,23 @@ export function validateInput(state: {
     // return 'Please enter a valid full name.';
     return {
       status: 400,
+      field: 'name',
       error: 'invalid_name',
       message: 'name should be at lease two words',
+    };
+  }
+  if (!state.email || !emailRegex.test(state.email)) {
+    return {
+      status: 400,
+      field: 'email',
+      error: 'invalid_email',
+      message: 'invalid email address',
     };
   }
   if (!state.subject || !textRegex.test(state.subject)) {
     return {
       status: 400,
+      field: 'subject',
       error: 'invalid_subject',
       message: 'subject should be at least two words',
     };
@@ -24,16 +34,9 @@ export function validateInput(state: {
   if (!state.message || !textRegex.test(state.message)) {
     return {
       status: 400,
+      field: 'message',
       error: 'invalid_message',
       message: 'message should be at least two words',
-    };
-  }
-
-  if (!state.email || !emailRegex.test(state.email)) {
-    return {
-      status: 400,
-      error: 'invalid_email',
-      message: 'invalid email address',
     };
   }
 

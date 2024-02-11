@@ -28,7 +28,7 @@ export const skills = [
     icon: 'https://img.icons8.com/color/48/000000/bootstrap.png',
   },
   {
-    name: 'Tailwind CSS',
+    name: 'Tailwind',
     icon: 'https://img.icons8.com/color/48/000000/tailwindcss.png',
   },
   {

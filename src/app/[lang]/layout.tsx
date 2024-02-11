@@ -3,10 +3,10 @@ import { Lemonada } from 'next/font/google';
 import { i18nConfig, type Locale } from '@/i18n-config';
 import { rtlLanguages } from '@/data/variables';
 import { getDictionary } from '@/lib/getDictionary';
+import Providers from './providers';
 import Navbar from '@/components/sections/header/Navbar';
 import Footer from '@/components/sections/footer/Footer';
 import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
-import AOSProvider from '@/components/layout/AOSProvider';
 
 import '../globals.css';
 import 'aos/dist/aos.css';
@@ -15,7 +15,7 @@ const lemonada = Lemonada({
   subsets: ['latin', 'arabic'],
   variable: '--lemonada',
   weight: ['400', '500', '600', '700'],
-  display: 'swap',
+  // display: 'swap',
 });
 
 export async function generateStaticParams() {
@@ -27,11 +27,6 @@ export async function generateStaticParams() {
   );
   return params;
 }
-
-// export async function generateStaticParams() {
-//   const dictionary = await getDictionary(params.lang, ['home']);
-//   return i18nConfig.locales.map((locale) => ({ lang: locale,  }));
-// }
 
 interface RootLayoutProps {
   params: { lang: Locale };
@@ -60,7 +55,7 @@ async function Root({
       className={`${lemonada.className} ${lemonada.variable}`}
       lang={params.lang}
       dir={rtlLanguages.includes(params.lang) ? 'rtl' : 'ltr'}>
-      <AOSProvider>
+      <Providers dictionary={dictionary}>
         <body>
           <Navbar
             lang={params.lang}
@@ -85,7 +80,7 @@ async function Root({
             }}
           />
         </body>
-      </AOSProvider>
+      </Providers>
     </html>
   );
 }

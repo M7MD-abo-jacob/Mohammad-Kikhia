@@ -7,30 +7,26 @@ It was made with create-react-app
 
 ## Some of the technologies and libraries used:
 
-- ReactJs
-- FontAwesome icons
+- NextJs 14
+- react-icons
 - EmailJs - for "contact me" section
-- React type animation
-- React animation on scroll
-- and more.
+- AOS: animation on scroll
 
 <!--
-https://github.com/M7MD-abo-jacob/Mohammad-Kikhia.git
 TODO:
-- documentations
 
-- html semantics
-
-- head
-- providers.tsx
 
 - errors popups
-
-- unused styles and classnames
-- css cariables
+- ERRORS FROM BACKEND
 
 - types
+- html semantics
+- documentations
+- unused classnames
+- files and names
 
-- accessebilityahffak;nf
+- make fun dark mode??
+
+- accessebilityahffak;nf , titles, ...
 
  -->

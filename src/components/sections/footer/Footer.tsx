@@ -11,27 +11,31 @@ const Footer = ({ lang, t }: { lang: Locale; t: Trans }) => {
     <footer className="footer">
       <div className="width-container">
         <div className="box-container">
-          <div data-aos="fade-up" className="box">
+          <div data-aos="zoom-in" className="box">
             <h3>{t.footer.title}</h3>
             <p>{t.footer.subtext}</p>
           </div>
 
-          <div data-aos="fade-up" className="box">
+          <div data-aos="zoom-in" className="box">
             <h3>{t.footer.links}</h3>
-            {sections.map((section) => (
-              <Link key={section} href={`#${section}`}>
+            {sections.map((section, i) => (
+              <Link
+                key={section}
+                data-aos="zoom-in"
+                data-aos-delay={i * 100}
+                href={`#${section}`}>
                 <FaChevronCircleEnd lang={lang} /> {t.nav[section]}
               </Link>
             ))}
           </div>
 
           <div className="box contact-methods">
-            <h3 data-aos="fade-up">{t.footer.contact_methods}</h3>
+            <h3 data-aos="zoom-in">{t.footer.contact_methods}</h3>
             {contactMethods.map((item, i) => {
               const Icon = item.icon;
               return item.href ? (
                 <a
-                  data-aos="zoom-out-down"
+                  data-aos="zoom-in"
                   data-aos-delay={i * 100}
                   data-aos-offset="50"
                   key={item.title}
@@ -42,7 +46,7 @@ const Footer = ({ lang, t }: { lang: Locale; t: Trans }) => {
               ) : (
                 <p
                   key={item.title}
-                  data-aos="zoom-out-down"
+                  data-aos="zoom-in"
                   data-aos-delay={i * 100}
                   data-aos-offset="50">
                   <Icon />
@@ -56,7 +60,7 @@ const Footer = ({ lang, t }: { lang: Locale; t: Trans }) => {
                   const Icon = item.icon;
                   return (
                     <li
-                      data-aos="zoom-out-down"
+                      data-aos="zoom-in"
                       data-aos-delay={i * 100}
                       data-aos-offset="0"
                       key={item.title}>

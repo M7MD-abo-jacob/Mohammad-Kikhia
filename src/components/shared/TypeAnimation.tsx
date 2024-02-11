@@ -15,7 +15,6 @@ const TypeAnimation: React.FC<TypeAnimationProps> = ({
   className,
   wrapper = 'span',
   cursor = true,
-  repeat = Infinity,
 }) => {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);

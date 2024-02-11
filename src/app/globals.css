@@ -9,10 +9,6 @@
 }
 
 html {
-  --light: hsl(0, 0%, 80%);
-  --warning: hsl(41, 100%, 50%);
-  --danger: hsl(0, 95%, 47%);
-
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding: 5.5rem;
@@ -21,10 +17,6 @@ html {
 body {
   background: #f7f7f7;
   padding-top: 7rem;
-  /* font-family: 'Poppins', sans-serif; */
-  /* font-family: 'Mali', cursive; */
-  font-family: 'Lemonada', cursive;
-  font-family: var(--lemonada);
   font-weight: 400;
 }
 
@@ -34,6 +26,8 @@ body {
 }
 
 html {
+  font-family: 'Lemonada', cursive;
+  font-family: var(--lemonada);
   font-size: 55%;
   overflow-x: hidden;
 }
@@ -104,7 +98,6 @@ header .width-container {
 }
 
 section {
-  /* min-height: 100vh; */
   padding: 2rem 9%;
 }
 
@@ -113,7 +106,7 @@ section {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
   color: rgb(32, 32, 32);
@@ -143,9 +136,9 @@ header .logo:hover {
 }
 
 .locale-switcher {
+  margin-inline-end: 1rem;
   margin-inline-start: auto;
   align-self: stretch;
-  /* height: 100%; */
 }
 .locale-switcher > div {
   height: 100%;
@@ -204,17 +197,13 @@ header .logo:hover {
 header .navbar ul {
   list-style: none;
   display: flex;
+  gap: 2rem;
   cursor: default;
   justify-content: center;
   align-items: center;
 }
 
-header .navbar li {
-  margin-inline-start: 2.5rem;
-}
-
 header .navbar ul li a {
-  cursor: pointer;
   font-size: 1.57rem;
   font-weight: 600;
   text-decoration: none;
@@ -246,7 +235,7 @@ header .navbar ul li a:hover {
   }
   header .navbar {
     position: fixed;
-    top: 6.5rem;
+    top: 6rem;
     inset-inline-end: -120%;
     width: 100%;
     height: 100%;
@@ -303,7 +292,6 @@ header .navbar ul li a:hover {
   flex-wrap: wrap;
   gap: 1.5rem;
   padding-block: 5rem;
-  /* min-height: 100vh; */
   align-items: center;
   overflow: hidden;
   background-color: #faf7f0;
@@ -354,7 +342,6 @@ header .navbar ul li a:hover {
 
 .home .image img:hover {
   transition: 'all 0.2s';
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
 }
 
 .home .content h2 {
@@ -387,7 +374,6 @@ header .navbar ul li a:hover {
 .home .btn {
   cursor: pointer;
   margin-top: 2rem;
-  /* position: absolute; */
   line-height: 0;
   padding: 1.6rem 3rem;
   border-radius: 4em;
@@ -395,7 +381,6 @@ header .navbar ul li a:hover {
   color: #fff;
   background: #2506ad;
   box-shadow: 0px 5px 18px #3044f799;
-  /* font-family: "Nunito", sans-serif; */
 }
 
 .home .btn span {
@@ -469,11 +454,9 @@ header .navbar ul li a:hover {
 .social-icons a.Instagram:hover {
   background-color: #ee00da;
 }
-
 /* social icons end */
 
 /* hero media queries starts*/
-
 @media (max-width: 450px) {
   .home .btn {
     margin: 4rem 0;
@@ -605,7 +588,6 @@ header .navbar ul li a:hover {
   .about .row .image img {
     height: 30rem;
     margin: 0 auto;
-    /* width: 80%; */
     mix-blend-mode: normal;
   }
   .about .row {
@@ -635,7 +617,6 @@ header .navbar ul li a:hover {
 
 /* skills section starts */
 .skills {
-  /* min-height: 90vh; */
   background: linear-gradient(to bottom, #57059e, #4a00e0);
 }
 
@@ -692,7 +673,6 @@ header .navbar ul li a:hover {
 .skills .container .bar .info span {
   font-size: 2rem;
   font-weight: 500;
-  /* font-family: "Poppins"; */
   margin-inline-start: 0.5rem;
 }
 
@@ -713,15 +693,11 @@ header .navbar ul li a:hover {
     width: 100%;
   }
 }
-
 /* skills media queries ends*/
-
 /* skills section ends */
 
 /* projects section starts */
-
 .projects {
-  /* background: #010124; */
   background: linear-gradient(to bottom, #000031, #00002c);
 }
 
@@ -779,11 +755,11 @@ header .navbar ul li a:hover {
 }
 
 .projects .box-container .box .content .tag h3 {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .projects .box-container .box:hover .content {
-  top: 25%;
+  top: 5%;
 }
 
 .projects .desc {
@@ -806,7 +782,6 @@ header .navbar ul li a:hover {
 
 .projects .desc .btns .btn {
   line-height: 0;
-  /* display: inline; */
   padding: 1.5rem 2.5rem;
   border-radius: 0.5rem;
   font-size: 1.5rem;
@@ -840,7 +815,6 @@ header .navbar ul li a:hover {
 .projects .viewall .btn span {
   font-weight: 600;
   font-size: 1.7rem;
-  /* font-family: "Nunito", sans-serif; */
 }
 
 .projects .viewall .btn svg {
@@ -857,14 +831,11 @@ header .navbar ul li a:hover {
 .projects .viewall .btn:hover svg {
   transform: scale(1.1);
 }
-
 /* projects section ends */
 
 /* contact section starts */
-
 .contact {
   background: #e5ecfb;
-  /* min-height: 60vh; */
 }
 
 .contact .container {
@@ -891,7 +862,6 @@ header .navbar ul li a:hover {
 
 .contact .content .image-box img {
   width: 100%;
-  /* height: 40rem; */
   position: relative;
 }
 
@@ -906,12 +876,38 @@ form .form-group {
   justify-content: center;
 }
 
-.form-group .field {
-  height: 50px;
-  display: flex;
+.form-group .field,
+.form-group .message {
   position: relative;
   margin: 1rem;
   width: 100%;
+}
+.form-group .field {
+  height: 50px;
+  display: flex;
+}
+.form-group label,
+.form-group label {
+  position: absolute;
+  top: 24px;
+  inset-inline-start: 45px;
+  transform: translateY(-50%);
+  cursor: text;
+}
+.form-group input:focus ~ label,
+.form-group input:not(.empty) ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(.empty) ~ label {
+  background: white;
+  padding: 0.2rem 1rem;
+  border: 1px dashed #57059e;
+  border-radius: 1000px;
+  top: 0;
+  inset-inline-start: 40px;
+}
+.form-group input.invalid ~ label,
+.form-group textarea.invalid ~ label {
+  border: 1px dashed #e90606 !important;
 }
 
 form svg {
@@ -930,10 +926,8 @@ form .message textarea {
   width: 100%;
   height: 100%;
   outline: none;
-  padding: 0 48px;
-  padding-inline-start: 47px;
+  padding: 0 45px;
   font-size: 16px;
-  /* font-family: "Poppins", sans-serif; */
   border-radius: 5px;
   border: 1px solid rgb(51, 51, 51);
   background: #e5ecfb;
@@ -951,19 +945,24 @@ form .message textarea::placeholder {
 
 .field input:focus,
 .message textarea:focus {
-  padding-inline-start: 47px;
   border: 2px solid rgb(115, 3, 167);
+}
+.field input.invalid,
+.message textarea.invalid {
+  border: 2px solid #e90606;
 }
 
 .field input:focus ~ svg,
 .message textarea:focus ~ svg {
   color: rgb(115, 3, 167);
 }
-
-form .message {
-  position: relative;
-  margin: 1rem;
-  width: 100%;
+/* .field input:valid ~ svg,
+.message textarea:valid ~ svg {
+  color: #00d9ff;
+} */
+.field input.invalid ~ svg,
+.message textarea.invalid ~ svg {
+  color: #e90606;
 }
 
 form .message svg {
@@ -977,7 +976,7 @@ form .message textarea {
   max-height: 230px;
   max-width: 100%;
   min-width: 100%;
-  padding: 12px 20px 0 48px;
+  padding-block: 12px;
 }
 
 form .message textarea::-webkit-scrollbar {
@@ -995,17 +994,18 @@ form .button-area {
   border: none;
   outline: none;
   font-size: 1.8rem;
-  cursor: pointer;
   border-radius: 5px;
   padding: 13px 25px;
   background: #2506ad;
   box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
   transition: 0.3s ease;
-  /* font-family: "Nunito", sans-serif; */
 }
-
 .button-area button:hover {
   background: #421cecf5;
+}
+.button-area button:disabled {
+  background: gray;
+  cursor: default;
 }
 
 .button-area span {
@@ -1028,7 +1028,6 @@ form .button-area {
 }
 
 /* contact section media queries starts */
-
 @media (max-width: 900px) {
   .contact .container {
     margin: 3rem 0 2rem 0;
@@ -1044,13 +1043,10 @@ form .button-area {
     margin-inline-end: 2rem;
   }
 }
-
 /* contact section media queries ends */
-
 /* contact section ends */
 
 /* footer section starts */
-
 .footer {
   min-height: auto;
   padding-top: 0;
@@ -1179,24 +1175,20 @@ form .button-area {
     padding: 1.2rem;
   }
 }
-
 /* footer section ends */
 
 /* common media queries starts*/
-
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 50%;
   }
   section {
     padding: 2rem;
   }
 }
-
 /* common media queries ends*/
 
 /* scroll top starts */
-
 #scroll-top {
   position: fixed;
   top: -140%;
@@ -1213,12 +1205,6 @@ form .button-area {
 #scroll-top.active {
   top: calc(100% - 12rem);
 }
-
-/* scroll top ends */
-
-/* scroll top */
-
-/* scroll top */
 
 .top-to-btm {
   position: relative;
@@ -1266,3 +1252,4 @@ form .button-area {
     transform: translateY(0px);
   }
 }
+/* scroll top ends */

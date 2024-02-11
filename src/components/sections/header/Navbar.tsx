@@ -20,7 +20,7 @@ const Navbar = ({ lang, t }: { lang: Locale; t: Trans }) => {
     <header>
       <div className="width-container">
         {/* ----------- BRAND ------------ */}
-        <Link data-aos="zoom-in" href="/" className="logo">
+        <Link data-aos="zoom-in" href="#" className="logo">
           <FaReact />
           <span>{t.header.brand.split(' ')[0]}</span>
         </Link>
