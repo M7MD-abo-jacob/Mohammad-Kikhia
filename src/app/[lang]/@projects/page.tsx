@@ -20,7 +20,7 @@ const Work = async ({ params }: { params: { lang: Locale } }) => {
             <Project
               key={project.name_en}
               t={t}
-              lang={params.lang}
+              lang={params.lang === 'ar' ? params.lang : 'en'}
               project={project}
             />
           ))}

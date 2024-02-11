@@ -7,8 +7,7 @@ import { trans } from '@/lib/trans';
 import { socials } from '@/data/variables';
 import TypeAnimation from '@/components/shared/TypeAnimation';
 import ShootingStars from '@/components/sections/home/stars/ShootingStars';
-import { Metadata, Viewport } from 'next';
-import { URL } from 'url';
+import { Viewport } from 'next';
 
 export default async function HomePage({
   params: { lang },
@@ -26,7 +25,7 @@ export default async function HomePage({
           <div className="content">
             <h2 data-aos="zoom-in">
               {trans(dictionary.home.hero.title, {
-                span: <span className="text-danger" />,
+                span: <span />,
               })}
             </h2>
             <p data-aos="zoom-in">
@@ -38,7 +37,7 @@ export default async function HomePage({
                 wrapper="span"
                 cursor={true}
                 repeat={Infinity}
-                style={{ fontSize: '1em' }}
+                // style={{ fontSize: '1em' }}
               />
             </p>
             <Link
@@ -62,10 +61,9 @@ export default async function HomePage({
                       <a
                         key={item.title}
                         href={item.href}
-                        className={`flex items-center justify-center w-20 h-20 leading-[44px] me-2 rounded-full ${item.title}`}
                         aria-label={item.title}
                         target="_blank">
-                        <Icon className="block" />
+                        <Icon />
                       </a>
                     </li>
                   );
@@ -95,7 +93,6 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
 };
-// export const metadata: Metadata = {
 export async function generateMetadata(req: any) {
   const lang = req?.params?.lang;
   const dictionary = await getDictionary(lang, ['home']);

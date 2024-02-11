@@ -19,6 +19,8 @@ https://github.com/M7MD-abo-jacob/Mohammad-Kikhia.git
 TODO:
 - documentations
 
+- html semantics
+
 - head
 - providers.tsx
 

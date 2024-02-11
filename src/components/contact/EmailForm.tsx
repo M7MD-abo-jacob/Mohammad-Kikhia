@@ -50,7 +50,8 @@ export default function EmailForm({ t }: Props) {
       console.log('response', response);
     } catch (error) {
       console.log('error', error);
-      alert(t.errors[error.error] || t.errors.default);
+      alert(t.errors.default);
+      // alert(t.errors[error.error] || t.errors.default);
     } finally {
       setIsLoading(false);
     }

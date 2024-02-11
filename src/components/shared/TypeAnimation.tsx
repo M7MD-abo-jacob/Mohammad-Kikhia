@@ -8,7 +8,6 @@ interface TypeAnimationProps {
   wrapper?: string;
   cursor?: boolean;
   repeat?: number;
-  style?: React.CSSProperties;
 }
 
 const TypeAnimation: React.FC<TypeAnimationProps> = ({
@@ -17,7 +16,6 @@ const TypeAnimation: React.FC<TypeAnimationProps> = ({
   wrapper = 'span',
   cursor = true,
   repeat = Infinity,
-  style,
 }) => {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
@@ -54,7 +52,7 @@ const TypeAnimation: React.FC<TypeAnimationProps> = ({
   const Wrapper = wrapper as keyof JSX.IntrinsicElements;
 
   return (
-    <Wrapper className={className} style={style}>
+    <Wrapper className={className}>
       {text}
       {cursor && <span className="cursor" />}
     </Wrapper>

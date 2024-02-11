@@ -4,7 +4,7 @@ import { Trans } from '../../../types';
 import { languages } from '@/data/variables';
 
 type Props = {
-  lang: string;
+  lang: 'ar' | 'en';
   project: {
     name_en: string;
     name_ar: string;
