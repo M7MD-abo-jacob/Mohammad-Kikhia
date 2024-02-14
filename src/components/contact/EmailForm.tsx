@@ -58,7 +58,7 @@ export default function EmailForm({ t, lang }: Props) {
       } else {
         throw response;
       }
-    } catch (error) {
+    } catch (error: any) {
       const errorMessage = error?.error
         ? t.errors[error.error]
         : error?.response?.data?.message || t.errors.default;
