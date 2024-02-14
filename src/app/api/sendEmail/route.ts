@@ -1,14 +1,18 @@
+import { getDictionary } from '@/lib/getDictionary';
 import { validateInput } from '@/lib/validateInput';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const serviceID = process.env.serviceID;
 const publicKey = process.env.publicKey;
 const templateID = process.env.templateID;
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  const lang = req.nextUrl.searchParams.get('lang') || 'en';
+  const dictionary = await getDictionary(lang, ['home']);
+  const t = dictionary.home.contact.errors;
+
   const body = await req.json();
   const { name, email, subject, message } = body;
-  const validationError = validateInput({ name, email, subject, message });
 
   const params = {
     user_id: publicKey,
@@ -31,10 +35,13 @@ export async function POST(req: Request) {
   };
 
   try {
+    const validationError = validateInput({ name, email, subject, message });
     if (validationError) {
       return NextResponse.json(
-        { error: 'An error occurred while sending email' },
-        { status: 500 },
+        {
+          message: t[validationError.error],
+        },
+        { status: 400 },
       );
     }
     const response = await fetch(
@@ -42,22 +49,20 @@ export async function POST(req: Request) {
       options,
     );
     if (response?.ok) {
-      console.log('SUCCESSSSSSSSSSS!');
-      return NextResponse.json(
-        { message: 'Email sent successfully' },
-        { status: 200 },
-      );
+      return NextResponse.json({ message: t.success }, { status: 200 });
     } else {
-      console.log('ERRROOOORRRRR!', response);
       return NextResponse.json(
-        { error: 'An error occurred while sending email' },
+        {
+          message: t.default,
+        },
         { status: 500 },
       );
     }
   } catch (error) {
-    console.log('FAILED... ', error);
     return NextResponse.json(
-      { error: 'An error occurred while sending email' },
+      {
+        message: t.default,
+      },
       { status: 500 },
     );
   }

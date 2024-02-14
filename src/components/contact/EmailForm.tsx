@@ -12,12 +12,13 @@ import {
 import { validateInput } from '@/lib/validateInput';
 import { getTextDirection } from '@/lib/getTextDirection';
 import { emailRegex, textRegex } from '@/data/variables';
+import { useNotification } from '../layout/NotificationsProvider';
+import axios, { AxiosError } from 'axios';
 
-type Props = { t: Trans };
+type Props = { t: Trans; lang: string };
 
-export default function EmailForm({ t }: Props) {
+export default function EmailForm({ t, lang }: Props) {
   const formRef = useRef<HTMLFormElement>(null);
-
   const initialState = {
     name: '',
     email: '',
@@ -26,8 +27,14 @@ export default function EmailForm({ t }: Props) {
   };
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState(initialState);
+  const addNotification = useNotification();
 
-  const validationError = validateInput(formData);
+  const validationError = validateInput({
+    name: formData.name.trim(),
+    subject: formData.subject.trim(),
+    email: formData.email.trim(),
+    message: formData.message.trim(),
+  });
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,28 +44,32 @@ export default function EmailForm({ t }: Props) {
       if (validationError) {
         throw validationError;
       }
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          subject: formData.subject,
-          email: formData.email,
-          message: formData.message,
-        }),
+      const response = await axios.post(`/api/sendEmail?lang=${lang}`, {
+        name: formData.name.trim(),
+        subject: formData.subject.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
       });
-      console.log('response', response);
+      if (response?.status === 200) {
+        addNotification({
+          message: t.success,
+          status: 'success',
+        });
+      } else {
+        throw response;
+      }
     } catch (error) {
-      console.log('error', error);
-      alert(t.errors.default);
-      // alert(t.errors[error.error] || t.errors.default);
+      const errorMessage = error?.error
+        ? t.errors[error.error]
+        : error?.response?.data?.message || t.errors.default;
+      addNotification({
+        message: errorMessage,
+        status: 'error',
+      });
     } finally {
       setIsLoading(false);
     }
   }
-  // TODO: shit typescript
   return (
     <form
       data-aos="fade-in-right"
@@ -69,11 +80,14 @@ export default function EmailForm({ t }: Props) {
         <div className="field">
           <input
             className={`${
-              formData.name.length > 0 && !textRegex.test(formData.name)
+              formData.name.trim().length > 0 &&
+              !textRegex.test(formData.name.trim())
                 ? 'invalid'
                 : ''
-            } ${formData.name.length > 0 ? '' : 'empty'}`}
-            dir={formData.name ? getTextDirection(formData.name) : ''}
+            } ${formData.name.trim().length > 0 ? '' : 'empty'}`}
+            dir={
+              formData.name.trim() ? getTextDirection(formData.name.trim()) : ''
+            }
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             type="text"
@@ -87,11 +101,12 @@ export default function EmailForm({ t }: Props) {
         <div className="field">
           <input
             className={`${
-              formData.email.length > 0 && !emailRegex.test(formData.email)
+              formData.email.trim().length > 0 &&
+              !emailRegex.test(formData.email.trim())
                 ? 'invalid'
                 : ''
-            } ${formData.email.length > 0 ? '' : 'empty'}`}
-            dir={formData.email ? 'ltr' : ''}
+            } ${formData.email.trim().length > 0 ? '' : 'empty'}`}
+            dir={formData.email.trim() ? 'ltr' : ''}
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
@@ -107,11 +122,16 @@ export default function EmailForm({ t }: Props) {
         <div className="field">
           <input
             className={`${
-              formData.subject.length > 0 && !textRegex.test(formData.subject)
+              formData.subject.trim().length > 0 &&
+              !textRegex.test(formData.subject.trim())
                 ? 'invalid'
                 : ''
-            } ${formData.subject.length > 0 ? '' : 'empty'}`}
-            dir={formData.subject ? getTextDirection(formData.subject) : ''}
+            } ${formData.subject.trim().length > 0 ? '' : 'empty'}`}
+            dir={
+              formData.subject.trim()
+                ? getTextDirection(formData.subject.trim())
+                : ''
+            }
             value={formData.subject}
             onChange={(e) =>
               setFormData({ ...formData, subject: e.target.value })
@@ -126,13 +146,17 @@ export default function EmailForm({ t }: Props) {
         </div>
         <div className="message">
           <textarea
-            // TODO: validation on backend
             className={`${
-              formData.message.length > 0 && !textRegex.test(formData.message)
+              formData.message.trim().length > 0 &&
+              !textRegex.test(formData.message.trim())
                 ? 'invalid'
                 : ''
-            } ${formData.message.length > 0 ? '' : 'empty'}`}
-            dir={formData.message ? getTextDirection(formData.message) : ''}
+            } ${formData.message.trim().length > 0 ? '' : 'empty'}`}
+            dir={
+              formData.message.trim()
+                ? getTextDirection(formData.message.trim())
+                : ''
+            }
             value={formData.message}
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
@@ -148,6 +172,7 @@ export default function EmailForm({ t }: Props) {
       <div className="button-area">
         <button
           data-aos="fade-up"
+          data-aos-offset="0"
           type="submit"
           disabled={validationError !== null || isLoading}>
           {t.submit} <FaPaperPlane />

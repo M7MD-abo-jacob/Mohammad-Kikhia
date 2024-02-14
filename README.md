@@ -15,14 +15,9 @@ It was made with create-react-app
 <!--
 TODO:
 
-
-- errors popups
-- ERRORS FROM BACKEND
-
 - types
 - html semantics
 - documentations
-- unused classnames
 - files and names
 
 - make fun dark mode??

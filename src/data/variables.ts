@@ -15,7 +15,8 @@ export const languages = [
 ];
 export const defaultLng = 'en';
 
-export const textRegex = /^[\p{L}]+\s[\p{L}]+[\p{L}\s]*$/u;
+export const textRegex =
+  /^[\p{L}\p{S}\p{P}\p{N}]+\s+[\p{L}\p{S}\p{P}\p{N}]+([\p{L}\p{S}\p{P}\p{N}\s]*)*$/u;
 export const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export const sections = ['home', 'about', 'skills', 'projects', 'contact'];

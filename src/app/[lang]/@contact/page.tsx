@@ -26,7 +26,7 @@ const Contact = async ({ params }: { params: { lang: Locale } }) => {
                 height={1000}
               />
             </div>
-            <EmailForm t={t} />
+            <EmailForm t={t} lang={params.lang} />
           </div>
         </div>
       </div>

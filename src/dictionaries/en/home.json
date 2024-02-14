@@ -64,11 +64,12 @@
     "subject": "subject",
     "message": "message",
     "submit": "submit",
+    "success": "Your Email was Sent.",
     "errors": {
-      "invalid_name": "Please enter a valid Name",
-      "invalid_subject": "Subject should be at least Two Words",
-      "invalid_message": "Message should be at least Two Words",
-      "invalid_email": "Please enter a valid Email Address",
+      "invalid_name": "Please enter a valid Name!",
+      "invalid_subject": "Subject should be at least Two Words!",
+      "invalid_message": "Message should be at least Two Words!",
+      "invalid_email": "Please enter a valid Email Address!",
       "default": "Something Unexpected Happened, please try again!"
     }
   },

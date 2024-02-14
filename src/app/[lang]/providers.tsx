@@ -6,6 +6,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import AOS from 'aos';
 import { Trans } from '../../../types';
+import NotificationsProvider from '@/components/layout/NotificationsProvider';
 
 function Providers({
   children,
@@ -32,8 +33,11 @@ function Providers({
       return () => window.removeEventListener('visibilitychange', changeTitle);
     }
   }, []);
-
-  return <>{children}</>;
+  return (
+    <>
+      <NotificationsProvider>{children}</NotificationsProvider>
+    </>
+  );
 }
 
 export default Providers;

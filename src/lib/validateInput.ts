@@ -1,40 +1,37 @@
 import { emailRegex, textRegex } from '@/data/variables';
 
-export function validateInput(state: {
+type Params = {
   name: string;
   email: string;
   subject: string;
   message: string;
-}) {
-  if (!state.name || !textRegex.test(state.name)) {
-    // return 'Please enter a valid full name.';
+};
+
+export function validateInput({ name, email, subject, message }: Params) {
+  if (!textRegex.test(name)) {
     return {
       status: 400,
-      field: 'name',
       error: 'invalid_name',
       message: 'name should be at lease two words',
     };
   }
-  if (!state.email || !emailRegex.test(state.email)) {
+  if (!emailRegex.test(email)) {
     return {
       status: 400,
-      field: 'email',
       error: 'invalid_email',
       message: 'invalid email address',
     };
   }
-  if (!state.subject || !textRegex.test(state.subject)) {
+  if (!textRegex.test(subject)) {
     return {
       status: 400,
-      field: 'subject',
       error: 'invalid_subject',
       message: 'subject should be at least two words',
     };
   }
-  if (!state.message || !textRegex.test(state.message)) {
+  if (!textRegex.test(message)) {
     return {
       status: 400,
-      field: 'message',
       error: 'invalid_message',
       message: 'message should be at least two words',
     };

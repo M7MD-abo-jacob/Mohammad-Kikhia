@@ -3,12 +3,12 @@ import { Lemonada } from 'next/font/google';
 import { i18nConfig, type Locale } from '@/i18n-config';
 import { rtlLanguages } from '@/data/variables';
 import { getDictionary } from '@/lib/getDictionary';
-import Providers from './providers';
 import Navbar from '@/components/sections/header/Navbar';
 import Footer from '@/components/sections/footer/Footer';
 import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
+import Providers from './providers';
 
-import '../globals.css';
+import '../styles/globals.css';
 import 'aos/dist/aos.css';
 
 const lemonada = Lemonada({
@@ -55,8 +55,8 @@ async function Root({
       className={`${lemonada.className} ${lemonada.variable}`}
       lang={params.lang}
       dir={rtlLanguages.includes(params.lang) ? 'rtl' : 'ltr'}>
-      <Providers dictionary={dictionary}>
-        <body>
+      <body>
+        <Providers dictionary={dictionary}>
           <Navbar
             lang={params.lang}
             t={{
@@ -79,8 +79,8 @@ async function Root({
               nav: dictionary.home.common.nav,
             }}
           />
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }

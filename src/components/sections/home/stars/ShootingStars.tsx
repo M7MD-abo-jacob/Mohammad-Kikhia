@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { randomInt } from '@/lib/getRandomInt';
-import styles from './ShootingStars.module.css';
+import styles from '@/app/styles/shootingStars.module.css';
 
 export default function ShootingStars() {
   const [width, setWidth] = useState(0);
