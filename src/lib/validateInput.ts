@@ -1,3 +1,5 @@
+// this function validated the email form and returns an error object if not valid
+// returns null if all are valid
 import { emailRegex, textRegex } from '@/data/variables';
 
 type Params = {

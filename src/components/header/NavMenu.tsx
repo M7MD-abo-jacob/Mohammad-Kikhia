@@ -3,7 +3,7 @@
 import { sections } from '@/data/variables';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { Trans } from '../../../../types';
+import { Trans } from '../../../types';
 
 type Props = { t: Trans; setHidden: Function };
 
@@ -11,6 +11,7 @@ export default function NavMenu({ t, setHidden }: Props) {
   const [visibleSection, setVisibleSection] = useState('home');
 
   useEffect(() => {
+    // get the viewed section to style the nav item accordingly
     if (typeof window !== 'undefined') {
       const navbarHeight = 75;
       const checkVisible = (elm: HTMLElement) => {
@@ -48,6 +49,7 @@ export default function NavMenu({ t, setHidden }: Props) {
         <li
           key={item}
           data-aos="zoom-out-down"
+          data-aos-offset="0"
           data-aos-delay={i * 100}
           onClick={() => setHidden(true)}>
           <Link

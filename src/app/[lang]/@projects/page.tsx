@@ -15,7 +15,7 @@ const Work = async ({ params }: { params: { lang: Locale } }) => {
         <h2 className="heading">
           <FaLaptopCode /> {trans(t.title, { span: <span /> })}
         </h2>
-        <div className="box-container">
+        <ul className="box-container">
           {projects.map((project) => (
             <Project
               key={project.name_en}
@@ -24,7 +24,7 @@ const Work = async ({ params }: { params: { lang: Locale } }) => {
               project={project}
             />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

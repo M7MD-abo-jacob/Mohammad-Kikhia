@@ -1,58 +1,58 @@
 export const skills = [
   {
     name: 'HTML',
-    icon: 'https://img.icons8.com/color/48/000000/html-5--v1.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
   },
   {
     name: 'CSS',
-    icon: 'https://img.icons8.com/color/48/000000/css3.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
   },
   {
     name: 'JavaScript',
-    icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
   },
   {
     name: 'ReactJS',
-    icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
   },
   {
     name: 'NextJS',
-    icon: 'https://img.icons8.com/color/48/000000/nextjs.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
   },
   {
     name: 'Redux',
-    icon: 'https://img.icons8.com/color/48/000000/redux.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg',
   },
   {
     name: 'Bootstrap',
-    icon: 'https://img.icons8.com/color/48/000000/bootstrap.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
   },
   {
     name: 'Tailwind',
-    icon: 'https://img.icons8.com/color/48/000000/tailwindcss.png',
-  },
-  {
-    name: 'Python',
-    icon: 'https://img.icons8.com/color/48/000000/python--v1.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
   },
   {
     name: 'jQuery',
-    icon: 'https://img.icons8.com/ios-filled/48/1169ae/jquery.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg',
   },
   {
     name: 'Git VCS',
-    icon: 'https://img.icons8.com/color/48/000000/git.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
   },
   {
     name: 'GitHub',
-    icon: 'https://img.icons8.com/glyph-neue/48/ffffff/github.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
   },
   {
     name: 'Nodejs',
-    icon: 'https://img.icons8.com/color/48/000000/nodejs.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg',
   },
   {
     name: 'MongoDB',
-    icon: 'https://img.icons8.com/color/48/000000/mongodb.png',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
   },
 ];

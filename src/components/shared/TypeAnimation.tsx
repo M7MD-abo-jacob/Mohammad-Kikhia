@@ -23,6 +23,7 @@ const TypeAnimation: React.FC<TypeAnimationProps> = ({
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
 
+    // deleting currently shown phrase
     if (isDeleting) {
       timeoutId = setTimeout(() => {
         setText(text.slice(0, text.length - 1));
@@ -31,23 +32,29 @@ const TypeAnimation: React.FC<TypeAnimationProps> = ({
           setIndex((index + 1) % sequence.length);
         }
       }, 30);
+      // writing a new phrase
     } else if (typeof sequence[index] === 'string') {
       const currentText = sequence[index] as string;
+      // while still writing
       if (text !== currentText) {
         timeoutId = setTimeout(
           () => setText(currentText.slice(0, text.length + 1)),
           70,
         );
+        // when done writing, start deleting
       } else {
         timeoutId = setTimeout(() => setIsDeleting(true), 1000);
       }
+      // select next phrase to write
     } else {
       timeoutId = setTimeout(() => setIndex((index + 1) % sequence.length), 50);
     }
 
+    // clear timeout
     return () => clearTimeout(timeoutId);
   }, [index, isDeleting, sequence, text]);
 
+  // set the wrapper tag as typed by the user
   const Wrapper = wrapper as keyof JSX.IntrinsicElements;
 
   return (

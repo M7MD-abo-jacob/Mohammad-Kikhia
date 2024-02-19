@@ -3,14 +3,15 @@ import { Lemonada } from 'next/font/google';
 import { i18nConfig, type Locale } from '@/i18n-config';
 import { rtlLanguages } from '@/data/variables';
 import { getDictionary } from '@/lib/getDictionary';
-import Navbar from '@/components/sections/header/Navbar';
-import Footer from '@/components/sections/footer/Footer';
-import ScrollToTopButton from '@/components/shared/ScrollToTopButton';
+import Navbar from '@/components/header/Navbar';
+import Footer from '@/components/footer/Footer';
+import ScrollToTopButton from '@/components/layout/ScrollToTopButton';
 import Providers from './providers';
 
 import '../styles/globals.css';
 import 'aos/dist/aos.css';
 
+// google font
 const lemonada = Lemonada({
   subsets: ['latin', 'arabic'],
   variable: '--lemonada',
@@ -18,6 +19,7 @@ const lemonada = Lemonada({
   // display: 'swap',
 });
 
+// generate static parameters to be used throughout the app
 export async function generateStaticParams() {
   const params = await Promise.all(
     i18nConfig.locales.map(async (locale) => {
@@ -70,7 +72,7 @@ async function Root({
             {skills}
             {projects}
             {contact}
-            <ScrollToTopButton />
+            <ScrollToTopButton t={dictionary.home.common.nav} />
           </main>
           <Footer
             lang={params.lang}

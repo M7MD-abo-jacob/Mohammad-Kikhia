@@ -17,26 +17,30 @@ const Skills = async ({ params }: { params: { lang: Locale } }) => {
           <FaLaptopCode /> {trans(t.title, { span: <span /> })}
         </h2>
         <div className="container">
-          <div className="row" id="skillsContainer">
+          {/* ---------- SKILLS LIST ---------- */}
+          <ul className="row" id="skillsContainer">
             {skills.map((skill, i) => (
-              <Tilter
+              <li
                 key={skill.name}
                 data-aos="zoom-out-down"
-                data-aos-delay={i * 100}>
-                <div className="bar">
-                  <div className="info">
-                    <Image
-                      src={skill.icon}
-                      alt="skill"
-                      height={200}
-                      width={200}
-                    />
-                    <span>{skill.name}</span>
+                data-aos-delay={i * 20}>
+                <Tilter>
+                  <div className="bar">
+                    <div className="info">
+                      <Image
+                        draggable="false"
+                        src={skill.icon}
+                        alt={skill.name}
+                        height={200}
+                        width={200}
+                      />
+                      <span>{skill.name}</span>
+                    </div>
                   </div>
-                </div>
-              </Tilter>
+                </Tilter>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

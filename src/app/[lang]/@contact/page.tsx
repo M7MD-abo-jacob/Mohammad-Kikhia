@@ -18,14 +18,17 @@ const Contact = async ({ params }: { params: { lang: Locale } }) => {
         </h2>
         <div className="container">
           <div className="content">
+            {/* ---------- IMAGE ---------- */}
             <div data-aos="fade-in-left" className="image-box">
               <Image
+                draggable="false"
                 src="/assets/img/contact1.png"
-                alt=""
-                width={1000}
-                height={1000}
+                alt={dictionary.home.common.metadata.author}
+                width={360}
+                height={391}
               />
             </div>
+            {/* ---------- EMAIL FORM ---------- */}
             <EmailForm t={t} lang={params.lang} />
           </div>
         </div>

@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { FaReact } from 'react-icons/fa';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { Locale } from '@/i18n-config';
-import { Trans } from '../../../../types';
+import { Trans } from '../../../types';
 import NavMenu from './NavMenu';
-import LocaleSwitcher from '@/components/shared/LocaleSwitcher';
+import LocaleSwitcher from '@/components/header/LocaleSwitcher';
 
 const Navbar = ({ lang, t }: { lang: Locale; t: Trans }) => {
   const [hidden, setHidden] = useState(true);
@@ -27,12 +27,13 @@ const Navbar = ({ lang, t }: { lang: Locale; t: Trans }) => {
 
         {/* ----------- LANGUAGE SELECTOR ------------ */}
         <div className="locale-switcher" data-aos="zoom-out-down">
-          <LocaleSwitcher lang={lang} />
+          <LocaleSwitcher lang={lang} t={t} />
         </div>
-        {/* ----------- NAV ------------ */}
+        {/* ----------- MAIN NAV ------------ */}
         <div className="menu">
-          {/* ----------- NAV BTN ------------ */}
+          {/* ----------- SIDE PANEL BUTTON ------------ */}
           <button
+            title={hidden ? t.header.open_panel : t.header.close_panel}
             onClick={() => toggleSidePanel()}
             className={hidden ? '' : 'close-btn'}>
             {hidden ? <FaBars /> : <FaX />}

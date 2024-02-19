@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NotificationType } from '../layout/NotificationsProvider';
+import { NotificationType } from './NotificationsProvider';
 import {
   FaCircleCheck,
   FaCircleInfo,

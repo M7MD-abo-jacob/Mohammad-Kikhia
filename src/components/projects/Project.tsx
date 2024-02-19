@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCode, FaEye } from 'react-icons/fa6';
 import { Trans } from '../../../types';
-import { languages } from '@/data/variables';
+import Image from 'next/image';
 
 type Props = {
   lang: 'ar' | 'en';
@@ -21,11 +21,13 @@ type Props = {
 
 export default function Project({ project, t, lang }: Props) {
   return (
-    <div className="box tilt" data-aos="zoom-in-down">
-      <img
+    <li className="box tilt" data-aos="zoom-in-down">
+      <Image
+        width={860}
+        height={860}
         draggable="false"
         src={'/assets/img/' + project.image + '.jpg'}
-        alt="project"
+        alt={project.name_en}
       />
       <div className="content">
         <div className="tag">
@@ -51,6 +53,6 @@ export default function Project({ project, t, lang }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 }

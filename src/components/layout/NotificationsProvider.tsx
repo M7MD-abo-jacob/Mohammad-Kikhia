@@ -1,5 +1,5 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react';
-import Notification from '@/components/shared/Notification';
+import Notification from '@/components/layout/Notification';
 
 export type NotificationType = {
   message: string;
@@ -17,7 +17,6 @@ export function useNotification() {
     );
   }
   return context;
-  //   return useContext(NotificationContext);
 }
 
 export default function NotificationsProvider({

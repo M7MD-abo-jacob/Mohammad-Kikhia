@@ -1,4 +1,6 @@
 'use client';
+// this component tilts on mouse hover accourding to the cursor position
+// it takse children and any props you want to give it
 
 import React, { ReactNode, useState } from 'react';
 
@@ -24,6 +26,7 @@ const Tilter = ({
   const handleMouseMove = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
+    // get cursor and element position and tilt accourdingly
     const { left, top, width, height } =
       event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - left) / width - 0.5;
@@ -31,6 +34,7 @@ const Tilter = ({
     setTransform({ tiltX: x * 30, tiltY: y * -15, scale: 1.01 });
   };
 
+  // return to original position when cursor leaves the element
   const handleMouseLeave = () => {
     setTransform({ tiltX: 0, tiltY: 0, scale: 1 });
   };

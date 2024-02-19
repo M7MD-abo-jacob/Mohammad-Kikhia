@@ -16,7 +16,7 @@ function Providers({
   dictionary: Trans;
 }) {
   useEffect(() => {
-    //  initialize AOS when the app loads
+    //  initialize AOS "animate on scroll" when the app loads
     AOS.init({});
     //   change the title meta tag when the user opens another tab
     if (typeof window !== 'undefined') {

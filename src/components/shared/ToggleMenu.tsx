@@ -1,4 +1,7 @@
 'use client';
+// this component is like a custom select/options component
+// i made it because the html option elements are hard to customize
+// it also has other usecases, like a dropdown, ...
 
 import { useState, useRef, useEffect, ReactNode } from 'react';
 
@@ -15,6 +18,7 @@ const ToggleMenu: React.FC<ToggleMenuProps> = ({ children, toggleButton }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
 
+  // close the menu when clicked outside of it
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
       setIsOpen(false);

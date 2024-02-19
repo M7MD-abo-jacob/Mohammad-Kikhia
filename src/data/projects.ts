@@ -1,18 +1,5 @@
 export const projects = [
   {
-    name_en: 'uShopia',
-    name_ar: 'يوشوبيا',
-    desc_en:
-      'a beautiful ecommerce website made with NextJs, Redux-Toolkit, Bootstrap, NodeJs and MongoDB.',
-    desc_ar:
-      'موقع متجر الكتروني بسيط صنع باستخدام NextJs, Redux-Toolkit, Bootstrap, NodeJs و MongoDB.',
-    image: 'ushopia',
-    links: {
-      visit: 'https://u-shopia.vercel.app/',
-      code: 'https://github.com/M7MD-abo-jacob/uShopia',
-    },
-  },
-  {
     name_en: 'Dynamic Weather App',
     name_ar: 'موقع الطقس الديناميكي',
     desc_en:
@@ -23,6 +10,19 @@ export const projects = [
     links: {
       visit: 'https://dynamic-weather-app-next13.vercel.app',
       code: 'https://github.com/M7MD-abo-jacob/Weather-App',
+    },
+  },
+  {
+    name_en: 'uShopia',
+    name_ar: 'يوشوبيا',
+    desc_en:
+      'a beautiful ecommerce website made with NextJs, Redux-Toolkit, Bootstrap, NodeJs and MongoDB.',
+    desc_ar:
+      'موقع متجر الكتروني بسيط صنع باستخدام NextJs, Redux-Toolkit, Bootstrap, NodeJs و MongoDB.',
+    image: 'ushopia',
+    links: {
+      visit: 'https://u-shopia.vercel.app/',
+      code: 'https://github.com/M7MD-abo-jacob/uShopia',
     },
   },
   {

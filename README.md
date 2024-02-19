@@ -14,14 +14,5 @@ It was made with create-react-app
 
 <!--
 TODO:
-
-- types
-- html semantics
-- documentations
-- files and names
-
 - make fun dark mode??
-
-- accessebilityahffak;nf , titles, ...
-
  -->

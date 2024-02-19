@@ -1,7 +1,8 @@
 'use client';
 
 import { Trans } from '../../../types';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import {
   FaCommentDots,
   FaEnvelope,
@@ -13,12 +14,10 @@ import { validateInput } from '@/lib/validateInput';
 import { getTextDirection } from '@/lib/getTextDirection';
 import { emailRegex, textRegex } from '@/data/variables';
 import { useNotification } from '../layout/NotificationsProvider';
-import axios, { AxiosError } from 'axios';
 
 type Props = { t: Trans; lang: string };
 
 export default function EmailForm({ t, lang }: Props) {
-  const formRef = useRef<HTMLFormElement>(null);
   const initialState = {
     name: '',
     email: '',
@@ -29,6 +28,7 @@ export default function EmailForm({ t, lang }: Props) {
   const [formData, setFormData] = useState(initialState);
   const addNotification = useNotification();
 
+  // validate the input form fields on every update
   const validationError = validateInput({
     name: formData.name.trim(),
     subject: formData.subject.trim(),
@@ -36,6 +36,7 @@ export default function EmailForm({ t, lang }: Props) {
     message: formData.message.trim(),
   });
 
+  // submit the email to the backend api route to be sent securely
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsLoading(true);
@@ -51,6 +52,7 @@ export default function EmailForm({ t, lang }: Props) {
         message: formData.message.trim(),
       });
       if (response?.status === 200) {
+        setFormData(initialState);
         addNotification({
           message: t.success,
           status: 'success',
@@ -71,12 +73,9 @@ export default function EmailForm({ t, lang }: Props) {
     }
   }
   return (
-    <form
-      data-aos="fade-in-right"
-      id="contact-form"
-      onSubmit={handleSubmit}
-      ref={formRef}>
+    <form data-aos="fade-in-right" id="contact-form" onSubmit={handleSubmit}>
       <div className="form-group">
+        {/* ---------- NAME FIELD ---------- */}
         <div className="field">
           <input
             className={`${
@@ -98,6 +97,7 @@ export default function EmailForm({ t, lang }: Props) {
           <FaUser />
           <label htmlFor="form-name">{t.name}</label>
         </div>
+        {/* ---------- EMAIL FIELD ---------- */}
         <div className="field">
           <input
             className={`${
@@ -119,6 +119,7 @@ export default function EmailForm({ t, lang }: Props) {
           <FaEnvelope />
           <label htmlFor="form-email">{t.email}</label>
         </div>
+        {/* ---------- SUBJECT FIELD ---------- */}
         <div className="field">
           <input
             className={`${
@@ -144,6 +145,7 @@ export default function EmailForm({ t, lang }: Props) {
           <FaInfo />
           <label htmlFor="form-subject">{t.subject}</label>
         </div>
+        {/* ---------- MESSAGE FIELD ---------- */}
         <div className="message">
           <textarea
             className={`${
@@ -169,6 +171,14 @@ export default function EmailForm({ t, lang }: Props) {
           <label htmlFor="form-message">{t.message}</label>
         </div>
       </div>
+      {/* ---------- VALIDATION ERROR TEXT ---------- */}
+      {validationError && (
+        <div className="error-text">
+          <FaInfo size="2rem" />
+          <p>{t.errors[validationError?.error]}</p>
+        </div>
+      )}
+      {/* ---------- SUBMIT BUTTON ---------- */}
       <div className="button-area">
         <button
           data-aos="fade-up"

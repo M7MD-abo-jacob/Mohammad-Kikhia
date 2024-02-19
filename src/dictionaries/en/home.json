@@ -6,13 +6,13 @@
       "description": "Mohammad Kikhia is a professional frontend web developer from Syria, specializing in ReactJS and NextJS. With a strong focus on user experience and interactive design, I create efficient and innovative web solutions. Explore my portfolio to see my work and learn more about my expertise in modern web technologies.",
       "author": "Mohammad Kikhia"
     },
-    "top": "to top",
     "nav": {
       "home": "home",
       "about": "about me",
       "skills": "skills",
       "projects": "projects",
-      "contact": "contact me"
+      "contact": "contact me",
+      "top": "to top"
     },
     "contact_methods": {
       "linkedin": "LinkedIn",
@@ -25,6 +25,7 @@
 
   "header": {
     "brand": "Mohammad Kikhia",
+    "language": "language",
     "open_panel": "open side panel",
     "close_panel": "close side panel"
   },
@@ -54,7 +55,7 @@
   "projects": {
     "title": "personal {span}projects{span}",
     "visit": "visit",
-    "code": "source code"
+    "code": "code"
   },
 
   "contact": {

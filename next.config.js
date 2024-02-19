@@ -3,7 +3,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'img.icons8.com',
+        hostname: 'cdn.jsdelivr.net',
         pathname: '**',
       },
       {

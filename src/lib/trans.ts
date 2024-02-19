@@ -1,4 +1,11 @@
-import React, { ReactElement, ReactNode } from 'react';
+// this functions aims to replace the <Trans /> component from i18n
+// "because the new app router is weird!!"
+// it takes the translation string, and an object of elements
+// ex: trans(dictionary.title, {span: <span className="test" />})
+// json file translation ex: "Hello {span}World{span}"
+// returns: "Hello <span className="test">World</span>
+
+import React, { ReactElement } from 'react';
 
 export function trans(
   translation: string,

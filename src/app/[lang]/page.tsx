@@ -6,7 +6,7 @@ import { getDictionary } from '@/lib/getDictionary';
 import { trans } from '@/lib/trans';
 import { socials } from '@/data/variables';
 import TypeAnimation from '@/components/shared/TypeAnimation';
-import ShootingStars from '@/components/sections/home/stars/ShootingStars';
+import ShootingStars from '@/components/home/ShootingStars';
 import { Viewport } from 'next';
 
 export default async function HomePage({
@@ -46,12 +46,14 @@ export default async function HomePage({
               <span>{dictionary.home.common.nav.about}</span>
               <FaArrowAltCircleDown />
             </Link>
+            {/* ---------- SOCIAL ICON LINKS ---------- */}
             <div className="socials">
               <ul className="social-icons">
                 {socials.map((item, i) => {
                   const Icon = item.icon;
                   return (
                     <li
+                      title={item.title}
                       data-aos="zoom-out-down"
                       data-aos-delay={i * 150}
                       data-aos-offset="0"
@@ -69,11 +71,12 @@ export default async function HomePage({
               </ul>
             </div>
           </div>
-          {/* ---------- BLOB IMAGE ---------- */}
+          {/* ---------- ANIMATED BLOB IMAGE ---------- */}
           <div className="image" data-aos="zoom-in">
             <Image
+              draggable="false"
               src="/assets/img/me1.jpg"
-              alt="sss"
+              alt={dictionary.home.common.metadata.author}
               width={500}
               height={500}
             />
@@ -91,8 +94,13 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
 };
-export async function generateMetadata(req: any) {
-  const lang = req?.params?.lang;
+interface CustomRequest extends Request {
+  params: {
+    [lang: string]: string;
+  };
+}
+export async function generateMetadata(req: CustomRequest) {
+  const lang = req?.params?.lang || 'en';
   const dictionary = await getDictionary(lang, ['home']);
   const metaData = dictionary.home.common.metadata;
   return {
@@ -113,16 +121,24 @@ export async function generateMetadata(req: any) {
     applicationName: metaData.title,
     keywords: [
       'Mohammad Kikhia',
+      'محمد كيخيا',
       'Frontend Developer',
+      'مطور ويب',
       'ReactJS',
+      'رياكت جي اس',
       'NextJS',
+      'نيكست جي اس',
       'Web Development',
+      'تطوير الويب',
       'JavaScript',
+      'TypeScript',
       'HTML',
       'CSS',
       'Syria',
+      'سوريا',
       'Latakia',
       'Lattakia',
+      'اللاذقية',
       'User Interface',
       'User Experience',
       'UI',
@@ -132,17 +148,9 @@ export async function generateMetadata(req: any) {
       'Git',
       'GitHub',
       'Node.js',
-      'npm',
-      'Webpack',
-      'Babel',
-      'ES6',
       'JSON',
-      'AJAX',
       'REST API',
       'Redux',
-      'React Hooks',
-      'React Router',
-      'Code Splitting',
       'SSR',
       'Server Side Rendering',
       'SEO',

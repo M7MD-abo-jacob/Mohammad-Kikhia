@@ -5,10 +5,17 @@ import Link from 'next/link';
 import { type Locale } from '../../i18n-config';
 import Image from 'next/image';
 import { languages } from '@/data/variables';
-import ToggleMenu from './ToggleMenu';
+import ToggleMenu from '../shared/ToggleMenu';
 import { FaCaretDown } from 'react-icons/fa';
+import { Trans } from '../../../types';
 
-export default function LocaleSwitcher({ lang }: { lang: string }) {
+export default function LocaleSwitcher({
+  lang,
+  t,
+}: {
+  lang: string;
+  t: Trans;
+}) {
   const pathName = usePathname();
   const setLanguage = (locale: Locale) => {
     document.cookie = `NEXT_LOCALE=${locale}; max-age=31536000; path=/`;
@@ -24,8 +31,12 @@ export default function LocaleSwitcher({ lang }: { lang: string }) {
     <ToggleMenu
       toggleButton={(toggleOpen) => (
         <>
-          <button className="lang-button" onClick={toggleOpen}>
+          <button
+            title={t.header.language}
+            className="lang-button"
+            onClick={toggleOpen}>
             <Image
+              draggable="false"
               src={languages.find((language) => language.locale === lang)!.icon}
               width={16}
               height={12}
@@ -45,7 +56,13 @@ export default function LocaleSwitcher({ lang }: { lang: string }) {
               onClick={() => {
                 setLanguage(lng.locale);
               }}>
-              <Image src={lng.icon} width={16} height={12} alt={lng.locale} />
+              <Image
+                draggable="false"
+                src={lng.icon}
+                width={16}
+                height={12}
+                alt={lng.locale}
+              />
               {lng.title}
             </Link>
           ))}

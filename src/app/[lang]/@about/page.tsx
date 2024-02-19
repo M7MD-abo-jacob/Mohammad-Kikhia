@@ -24,9 +24,9 @@ const About = async ({ params }: { params: { lang: Locale } }) => {
               draggable="false"
               className="tilt"
               src="/assets/img/me2.jpg"
+              alt={dictionary.home.common.metadata.author}
               width={1000}
               height={1000}
-              alt=""
             />
           </Tilter>
           {/* ---------- CONTENT ---------- */}
@@ -36,16 +36,14 @@ const About = async ({ params }: { params: { lang: Locale } }) => {
               {t.subtitle}
             </h4>
             <p data-aos="fade-up">{t.subtext}</p>
-            {/* ---------- RESUME BUTTON ---------- */}
-            <div data-aos="fade-up" className="resumebtn">
-              <Link
-                href="/assets/files/mohammad-kikhia.pdf"
-                target="_blank"
-                className="btn">
-                <span>{t.resume}</span>
-                <FaDownload />
-              </Link>
-            </div>
+            {/* ---------- DOWNLOAD RESUME BUTTON ---------- */}
+            <Link
+              data-aos="fade-up"
+              href="/assets/files/mohammad-kikhia.pdf"
+              target="_blank"
+              className="resumebtn">
+              <span>{t.resume}</span> <FaDownload />
+            </Link>
           </div>
         </div>
       </div>
