@@ -36,6 +36,10 @@ export const skills = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
   },
   {
+    name: 'MaterialUI',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg',
+  },
+  {
     name: 'jQuery',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg',
   },
